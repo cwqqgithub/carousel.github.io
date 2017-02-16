@@ -1,0 +1,91 @@
+// 详细  轮播图API
+.zySlide(options) 只在轮播图的根标签上调用
+	options
+	描述：设置轮播速度和控制刚炸开的时间的对象集合
+	options对象设置为{speed:value,delay:value} 
+	
+.zySlide() 不设置options对象参数
+           默认设置为{delay: 1000,speed: 2000}
+           
+.zySlide({delay:value}) 不设置speed:value参数
+	轮播的控制刚炸开的时间delay:value将会改变为设置的时间,轮播速度delay:value为默认速度
+	
+.zySlide({speed:value}) 不设置delay:value参数
+	轮播速度delay:value将会改变为设置的时间,轮播的控制刚炸开的时间speed:value为默认时间
+
+.zySlide({delay:value,speed:value}) 设置delay:value和speed:value参数
+	轮播速度delay:value将会改变为设置的时间,轮播的控制刚炸开的时间speed:value将会改变为设置时间
+
+.zySlide()支持链式调用，并且支持 jQuery 出让  $ 符号的使用权限 
+(也就是说,从这开始不是  $ jQuery,只能用变量  jQuery)
+jQuery.noConflict();
+
+
+例子:
+多个轮播图的使用，链式调用，jQuery()的使用和链式调用。
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播图</title>
+		<link rel="stylesheet" type="text/css" href="css/jQuery.zyslide.css"/>
+	</head>
+	<body>
+		<!--第一个轮播图-->
+		<div class="slide zy-slide">
+			<div class="zy-prev" data-slide="direction">前一张</div>
+			<section class="zy-next" data-slide="direction">后一张</section>
+			<ul>
+				<li><img src="images/1.jpg" alt="轮播图片" /></li>
+				<li><img src="images/2.jpg" alt="轮播图片" /></li>
+				<li><img src="images/3.jpg" alt="轮播图片" /></li>
+				<li><img src="images/4.jpg" alt="轮播图片" /></li>
+				<li><img src="images/5.jpg" alt="轮播图片" /></li>
+				<li><img src="images/6.jpg" alt="轮播图片" /></li>
+				<li><img src="images/7.jpg" alt="轮播图片" /></li>
+			</ul>
+		</div>
+		<!--第二个轮播图-->
+		<div class="slide zy-slide">
+			<div class="zy-prev" data-slide="direction">前一张</div>
+			<div class="zy-next" data-slide="direction">后一张</div>
+			<ul>
+				<li><img src="images/1.jpg" alt="轮播图片" /></li>
+				<li><img src="images/2.jpg" alt="轮播图片" /></li>
+				<li><img src="images/3.jpg" alt="轮播图片" /></li>
+				<li><img src="images/4.jpg" alt="轮播图片" /></li>
+				<li><img src="images/5.jpg" alt="轮播图片" /></li>
+				<li><img src="images/6.jpg" alt="轮播图片" /></li>
+				<li><img src="images/7.jpg" alt="轮播图片" /></li>
+			</ul>
+		</div>
+		<!--第三个轮播图-->
+		<div id="slide" class="zy-slide">
+			<section class="zy-prev" data-slide="direction">前一张</section>
+			<section class="zy-next" data-slide="direction">后一张</section>
+			<ul>
+				<li><img src="images/1.jpg" alt="轮播图片" /></li>
+				<li><img src="images/2.jpg" alt="轮播图片" /></li>
+				<li><img src="images/3.jpg" alt="轮播图片" /></li>
+				<li><img src="images/4.jpg" alt="轮播图片" /></li>
+				<li><img src="images/5.jpg" alt="轮播图片" /></li>
+				<li><img src="images/6.jpg" alt="轮播图片" /></li>
+				<li><img src="images/7.jpg" alt="轮播图片" /></li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript" src="libs/jquery.js" ></script>
+<script type="text/javascript" src="js/jQuery.zyslide.js" ></script>
+<script type="text/javascript" src="index.js" ></script>
+<sctipt  type="text/javascript">
+	jQuery.noConflict();
+	jQuery('.slide').zySlide({speed:1000}).css({
+		'backgroundColor':'yellow'
+	});
+	jQuery('#slide').zySlide({delay:2000,speed:5000}).css({
+	'border':'2px solid red',
+	'backgroundColor':'green'
+	});
+</script>

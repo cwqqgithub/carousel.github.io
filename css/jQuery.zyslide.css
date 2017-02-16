@@ -1,0 +1,60 @@
+
+.zy-slide {
+	/*两个section  (上一张/下一张) 要做相对定位*/
+	font-size: 13px;
+	position: relative;
+	width: 754px;
+	height: 292px;
+	margin: 115px auto 0;
+}
+
+.zy-slide .zy-prev,.zy-slide .zy-next {
+	position: absolute;
+	top: 50%;
+	width: 40px;
+	height: 80px;
+	margin-top: -40px;
+	line-height: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.zy-slide .zy-prev{
+	left: -60px;
+}
+
+.zy-slide .zy-next{
+	right: -60px;
+}
+
+
+.zy-slide ul{ 
+	/*7个  li 相对于父标签做绝对定位*/
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 754px;
+	height: 292px;
+}
+
+.zy-slide li{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	border: 2px solid black;
+	list-style-type: none;
+	background-color: black;
+	width: 0;
+	height: 0;
+	top: 146px;
+	left: 377px;
+	border-radius: 5px;
+	z-index: 0;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.zy-slide li img{
+	width: 100%;
+	height: 100%;
+}
